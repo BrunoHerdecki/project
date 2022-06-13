@@ -20,14 +20,31 @@ namespace project
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private void HelloWorldButton_Click(object sender, RoutedEventArgs e)
+        private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Hello, world!");
+            Model db = new Model();
+
+            Student studentObject = new Student()
+            {
+                Username = dbName.Text,
+                Password = dbPassword.Text
+            };
+            try
+            {
+                db.students.Add(studentObject);
+                db.SaveChanges();
+            }
+            catch
+            {
+                Console.WriteLine("ciota");
+            }
+
         }
     }
 }

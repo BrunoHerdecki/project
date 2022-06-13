@@ -6,8 +6,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:project"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Register" Height="450" Width="800">
     <Grid>
-        <Button Click="HelloWorldButton_Click">Hello, World!</Button>
+        <Label Content="Name:" HorizontalAlignment="Left" Margin="20,19,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Microsoft New Tai Lue"/>
+        <TextBox x:Name="dbName" HorizontalAlignment="Left" Height="23" Margin="130,23,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="163" FontSize="16" FontFamily="Microsoft New Tai Lue"/>
+        <Label Content="Password:" HorizontalAlignment="Left" Margin="20,70,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Microsoft New Tai Lue"/>
+        <TextBox x:Name="dbPassword" HorizontalAlignment="Left" Height="23" Margin="130,74,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="163" FontSize="16" FontFamily="Microsoft New Tai Lue"/>
+        <Button x:Name="btnAdd" Content="Register" FontSize="16" FontFamily="Microsoft New Tai Lue" HorizontalAlignment="Left" Margin="218,115,0,0" VerticalAlignment="Top" Width="75" Click="BtnAdd_Click"/>
     </Grid>
 </Window>

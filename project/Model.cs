@@ -30,35 +30,43 @@ namespace project
                     {
                         en.HasNoKey();
                     });
+
+            modelBuilder
+                .Entity<Student>()
+                .HasIndex(u => u.Username)
+                .IsUnique();
         }
-    }
 
 
-    public class Teacher
-    {
-        public string Username { get; set; }
-        public string Password { get; set; }
-        public int TeacherId { get; set; }
-    }
-
-    public class Student
-    {
-        public int StudentId { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
-    }
-
-    public class Courses
-    {
-        public int CoursesId { get; set; }
-        public string CourseName { get; set; }
-        public int TeacherId { get; set; }
-    }
-
-    public class Participants
-    {
-        public int CourseId { get; set; }
-        public int UserId { get; set; }
     }
 }
+
+
+public class Teacher
+{
+    public string Username { get; set; }
+    public string Password { get; set; }
+    public int TeacherId { get; set; }
+}
+
+public class Student
+{
+    public int StudentId { get; set; }
+    public string Username { get; set; }
+    public string Password { get; set; }
+}
+
+public class Courses
+{
+    public int CoursesId { get; set; }
+    public string CourseName { get; set; }
+    public int TeacherId { get; set; }
+}
+
+public class Participants
+{
+    public int CourseId { get; set; }
+    public int UserId { get; set; }
+}
+
 
