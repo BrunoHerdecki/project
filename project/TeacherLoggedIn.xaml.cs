@@ -29,13 +29,18 @@ namespace project
 
         private void ShowCurses(object sender, RoutedEventArgs e)
         {
-            cursesList CursesList = new cursesList();
-            CursesList.Show();
+            CourseList curses = new CourseList();
+            curses.Show();
         }
         private void ShowStudents(object sender, RoutedEventArgs e)
         {
             StudentsList students = new StudentsList();
             students.Show();
+        }
+        private void ShowParticipants(object sender, RoutedEventArgs e)
+        {
+            ParticipantsList participants = new ParticipantsList();
+            participants.Show();
         }
 
         private void BtnAddCourse(object sender, RoutedEventArgs e)
@@ -58,10 +63,11 @@ namespace project
             {
                 db.courses.Add(courseObject);
                 db.SaveChanges();
+                MessageBox.Show($"You added course {CourseName.Text}");
             }
             catch (Exception)
             {
-                MessageBox.Show("Something went wrong");
+                MessageBox.Show("That course name already exhists");
             }
         }
 
@@ -89,7 +95,7 @@ namespace project
                     {
                         context.participants.Add(participantsObject);
                         context.SaveChanges();
-                        MessageBox.Show("Students added to course");
+                        MessageBox.Show($"Student:{StudentName.Text}  added to course: {whatCourse.Text}");
                     }
                     catch
                     {
@@ -97,6 +103,8 @@ namespace project
                     }
 
                 }
+                else
+                    MessageBox.Show("Something went wrong");
             }
         }
     }

@@ -31,21 +31,37 @@ namespace project
 
             Student studentObject =
                 new Student()
-                { Username = dbName.Text, Password = dbPassword.Password };
-            if(dbName.Text.Length<5 || dbName.Text.Length>10)
+                {
+                    Username = dbName.Text,
+                    Password = dbPassword.Password,
+                    Name = dbNamee.Text,
+                    Surname = dbSurname.Text,
+                    Adress = dbAdress.Text
+                };
+            if (dbName.Text.Length < 5 || dbName.Text.Length > 10)
             {
-                MessageBox.Show("Min username length is 5 characters and max is 10 characters");
+                MessageBox
+                    .Show("Min username length is 5 characters and max is 10 characters");
                 return;
             }
-            if (dbPassword.Password.Length < 5 || dbPassword.Password.Length > 10)
+            if (
+                dbPassword.Password.Length < 5 ||
+                dbPassword.Password.Length > 10
+            )
             {
-                MessageBox.Show("Min password length is 5 characters and max is 10 password");
+                MessageBox
+                    .Show("Min password length is 5 characters and max is 10 password");
                 return;
             }
             try
             {
-                db.students.Add (studentObject);
+                db.students.Add(studentObject);
                 db.SaveChanges();
+                var user =
+                    db.students.FirstOrDefault(u => u.Username == dbName.Text);
+                UserLoggedIn userLoggedIn = new UserLoggedIn(user);
+                userLoggedIn.Show();
+                this.Close();
             }
             catch (Exception)
             {
@@ -53,13 +69,14 @@ namespace project
             }
         }
 
-
         private void btnLoginAsStudent(object sender, RoutedEventArgs e)
         {
-            
             using (Model context = new Model())
             {
-                var user = context.students.FirstOrDefault(u => u.Username == loginName.Text);
+                var user =
+                    context
+                        .students
+                        .FirstOrDefault(u => u.Username == loginName.Text);
                 if (user != null)
                 {
                     if (user.Password == loginPassword.Password)
@@ -70,29 +87,27 @@ namespace project
                     }
                 }
             }
-
-
         }
 
         private void btnLoginAsTeacher(object sender, RoutedEventArgs e)
         {
-
             using (Model context = new Model())
             {
-                var teacher = context.teachers.FirstOrDefault(u => u.Username == TeacherName.Text);
+                var teacher =
+                    context
+                        .teachers
+                        .FirstOrDefault(u => u.Username == TeacherName.Text);
                 if (teacher != null)
                 {
                     if (teacher.Password == TeacherPassword.Password)
                     {
-                        TeacherLoggedIn teacherLoggedIn = new TeacherLoggedIn(teacher);
+                        TeacherLoggedIn teacherLoggedIn =
+                            new TeacherLoggedIn(teacher);
                         teacherLoggedIn.Show();
                         this.Close();
-
                     }
                 }
             }
-
         }
-
     }
 }

@@ -14,9 +14,9 @@ using System.Windows.Shapes;
 
 namespace project
 {
-    public partial class cursesList : Window
+    public partial class CourseList : Window
     {
-        public cursesList()
+        public CourseList()
         {
             InitializeComponent();
             Model db = new Model();

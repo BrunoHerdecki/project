@@ -32,9 +32,15 @@ namespace project
         {
             modelBuilder.Entity<Participants>().HasKey(k => new { k.CourseId, k.UserId });
 
+            modelBuilder.Entity<Courses>().HasIndex(c => c.CourseName).IsUnique();
+
             modelBuilder.Entity<Student>().HasIndex(u => u.Username).IsUnique();
 
             modelBuilder.Entity<Teacher>().HasIndex(u => u.Username).IsUnique();
+
+            modelBuilder.Entity<Teacher>().HasData(new Teacher { Username = "teacher1", Name = "Albert", Surname = "Mark", Password = "12345", TeacherId = 1 },
+                new Teacher { Username = "teacher2", Name = "Hubert", Surname = "Popcorn", Password = "12345", TeacherId = 2 },
+                new Teacher { Username = "teacher3", Name = "Zygmunt", Surname = "Ogień", Password = "12345", TeacherId = 3 });
         }
     }
 }
@@ -46,6 +52,12 @@ public class Teacher
 
     [Required]
     public string Password { get; set; }
+
+    [Required]
+    public string Name { get; set; }
+
+    [Required]
+    public string Surname { get; set; }
 
     public int TeacherId { get; set; }
 }
@@ -59,6 +71,16 @@ public class Student
 
     [Required]
     public string Password { get; set; }
+
+    [Required]
+    public string Name { get; set; }
+
+    [Required]
+    public string Surname { get; set; }
+
+    [Required]
+    public string Adress { get; set; }
+
 }
 
 public class Courses

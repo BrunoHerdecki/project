@@ -16,8 +16,9 @@
         <TextBox x:Name="StudentName" HorizontalAlignment="Left" Height="24" Margin="568,34,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="162" FontSize="16" FontFamily="Microsoft New Tai Lue"/>
         <Label Content="Course Name:" HorizontalAlignment="Left" Margin="432,74,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Microsoft New Tai Lue"/>
         <TextBox x:Name="whatCourse" HorizontalAlignment="Left" Height="23" Margin="568,78,0,0" VerticalAlignment="Top" Width="163" FontSize="16" FontFamily="Microsoft New Tai Lue"/>
-        <Button x:Name="registerstudenttocourse" Content="Add Course" FontSize="16" FontFamily="Microsoft New Tai Lue" HorizontalAlignment="Left" Margin="600,117,0,0" VerticalAlignment="Top" Width="98" Click="BtnAddStudentToCourse"/>
+        <Button x:Name="registerstudenttocourse" Content="Add Student To Course" FontSize="16" FontFamily="Microsoft New Tai Lue" HorizontalAlignment="Left" Margin="525,127,0,0" VerticalAlignment="Top" Width="183" Click="BtnAddStudentToCourse" RenderTransformOrigin="0.5,0.5" Height="22"></Button>
         <Button x:Name="asd" Content="Show All Courses" FontSize="16" FontFamily="Microsoft New Tai Lue" HorizontalAlignment="Center" Margin="0,281,0,0" VerticalAlignment="Top" Width="196" Click="ShowCurses"/>
         <Button x:Name="aaa" Content="Show All Students" FontSize="16" FontFamily="Microsoft New Tai Lue" HorizontalAlignment="Center" Margin="0,321,0,0" VerticalAlignment="Top" Width="196" Click="ShowStudents"/>
+        <Button x:Name="dsa" Content="Show Participants" FontSize="16" FontFamily="Microsoft New Tai Lue" HorizontalAlignment="Center" Margin="0,360,0,0" VerticalAlignment="Top" Width="196" Click="ShowParticipants"/>
     </Grid>
 </Window>

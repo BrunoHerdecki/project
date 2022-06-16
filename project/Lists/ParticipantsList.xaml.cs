@@ -12,24 +12,22 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace project
+namespace project.Lists
 {
     /// <summary>
-    /// Interaction logic for UserLoggedIn.xaml
+    /// Interaction logic for ParticipantsList.xaml
     /// </summary>
-    public partial class UserLoggedIn : Window
+    public partial class ParticipantsList : Window
     {
-        public UserLoggedIn(Student user)
+        public ParticipantsList()
         {
             InitializeComponent();
-
             Model db = new Model();
             var query =
                 from part in db.participants
                 join cur in db.courses on part.CourseId equals cur.CoursesId
-                join tea in db.teachers on cur.TeacherId equals tea.TeacherId
-                where part.UserId == user.StudentId
-                select new { cur.CourseName, cur.Description, Teacher_Name = tea.Name, Teacher_Surname = tea.Surname };
+                join stu in db.students on part.UserId equals stu.StudentId
+                select new { cur.CourseName, stu.Name, stu.Surname };
 
             fromQuery.ItemsSource = query.ToList();
         }
