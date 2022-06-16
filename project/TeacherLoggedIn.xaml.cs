@@ -1,4 +1,5 @@
-﻿using System;
+﻿using project.Lists;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,20 +20,34 @@ namespace project
     /// </summary>
     public partial class TeacherLoggedIn : Window
     {
-        public TeacherLoggedIn()
+        public Teacher teacher1 { get; set; }
+        public TeacherLoggedIn(Teacher teacher)
         {
             InitializeComponent();
+            teacher1 = teacher;
+        }
+
+        private void ShowCurses(object sender, RoutedEventArgs e)
+        {
+            cursesList CursesList = new cursesList();
+            CursesList.Show();
+        }
+        private void ShowStudents(object sender, RoutedEventArgs e)
+        {
+            StudentsList students = new StudentsList();
+            students.Show();
         }
 
         private void BtnAddCourse(object sender, RoutedEventArgs e)
         {
             Model db = new Model();
-
             Courses courseObject =
                 new Courses()
                 {
                     CourseName = CourseName.Text,
+                    TeacherId = teacher1.TeacherId,
                     Description = DescriptionName.Text
+
                 };
             if (CourseName.Text.Length < 5)
             {
@@ -41,7 +56,7 @@ namespace project
             }
             try
             {
-                db.courses.Add (courseObject);
+                db.courses.Add(courseObject);
                 db.SaveChanges();
             }
             catch (Exception)

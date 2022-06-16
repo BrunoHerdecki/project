@@ -56,7 +56,7 @@ namespace project
 
         private void btnLoginAsStudent(object sender, RoutedEventArgs e)
         {
-            UserLoggedIn userLoggedIn = new UserLoggedIn();
+            
             using (Model context = new Model())
             {
                 var user = context.students.FirstOrDefault(u => u.Username == loginName.Text);
@@ -64,6 +64,7 @@ namespace project
                 {
                     if (user.Password == loginPassword.Password)
                     {
+                        UserLoggedIn userLoggedIn = new UserLoggedIn(user);
                         userLoggedIn.Show();
                         this.Close();
                     }
@@ -75,14 +76,15 @@ namespace project
 
         private void btnLoginAsTeacher(object sender, RoutedEventArgs e)
         {
-            TeacherLoggedIn  teacherLoggedIn = new TeacherLoggedIn();
+
             using (Model context = new Model())
             {
-                var user = context.teachers.FirstOrDefault(u => u.Username == TeacherName.Text);
-                if (user != null)
+                var teacher = context.teachers.FirstOrDefault(u => u.Username == TeacherName.Text);
+                if (teacher != null)
                 {
-                    if (user.Password == TeacherPassword.Password)
+                    if (teacher.Password == TeacherPassword.Password)
                     {
+                        TeacherLoggedIn teacherLoggedIn = new TeacherLoggedIn(teacher);
                         teacherLoggedIn.Show();
                         this.Close();
 

@@ -8,20 +8,23 @@
         mc:Ignorable="d"
         Title="Register" Height="450" Width="800">
     <Grid>
-        <Label Content="Name:" HorizontalAlignment="Left" Margin="20,19,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Microsoft New Tai Lue"/>
-        <TextBox x:Name="dbName" HorizontalAlignment="Left" Height="23" Margin="130,23,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="163" FontSize="16" FontFamily="Microsoft New Tai Lue"/>
-        <Label Content="Password:" HorizontalAlignment="Left" Margin="20,70,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Microsoft New Tai Lue"/>
-        <PasswordBox x:Name="dbPassword" HorizontalAlignment="Left" Height="23" Margin="130,74,0,0" VerticalAlignment="Top" Width="163" FontSize="16" FontFamily="Microsoft New Tai Lue"/>
-        <Button x:Name="registerstudent" Content="Register" FontSize="16" FontFamily="Microsoft New Tai Lue" HorizontalAlignment="Left" Margin="218,115,0,0" VerticalAlignment="Top" Width="75" Click="BtnRegister"/>
-        <Label Content="Name:" HorizontalAlignment="Left" Margin="417,19,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Microsoft New Tai Lue"/>
-        <TextBox x:Name="loginName" HorizontalAlignment="Left" Height="23" Margin="522,23,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="164" FontSize="16" FontFamily="Microsoft New Tai Lue"/>
-        <Label Content="Password:" HorizontalAlignment="Left" Margin="417,74,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Microsoft New Tai Lue"/>
-        <PasswordBox x:Name="loginPassword" HorizontalAlignment="Left" Height="23" Margin="522,74,0,0" VerticalAlignment="Top" Width="163" FontSize="16" FontFamily="Microsoft New Tai Lue"/>
-        <Button x:Name="loginstudent" Content="Login" FontSize="16" FontFamily="Microsoft New Tai Lue" HorizontalAlignment="Left" Margin="611,115,0,0" VerticalAlignment="Top" Width="75" Click="btnLoginAsStudent"/>
-        <Label Content="Name:" HorizontalAlignment="Left" Margin="417,245,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Microsoft New Tai Lue"/>
-        <TextBox x:Name="TeacherName" HorizontalAlignment="Left" Height="23" Margin="522,249,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="164" FontSize="16" FontFamily="Microsoft New Tai Lue"/>
-        <Label Content="Password:" HorizontalAlignment="Left" Margin="417,323,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Microsoft New Tai Lue"/>
-        <PasswordBox x:Name="TeacherPassword" HorizontalAlignment="Left" Height="23" Margin="522,327,0,0" VerticalAlignment="Top" Width="163" FontSize="16" FontFamily="Microsoft New Tai Lue"/>
-        <Button x:Name="loginteacher" Content="Login" FontSize="16" FontFamily="Microsoft New Tai Lue" HorizontalAlignment="Left" Margin="611,379,0,0" VerticalAlignment="Top" Width="75" Click="btnLoginAsTeacher"/>
+        <Label Content="Name:" HorizontalAlignment="Left" Margin="10,43,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Microsoft New Tai Lue"/>
+        <TextBox x:Name="dbName" HorizontalAlignment="Left" Height="23" Margin="95,47,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="163" FontSize="16" FontFamily="Microsoft New Tai Lue"/>
+        <Label Content="Password:" HorizontalAlignment="Left" Margin="10,71,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Microsoft New Tai Lue"/>
+        <PasswordBox x:Name="dbPassword" HorizontalAlignment="Left" Height="23" Margin="95,75,0,0" VerticalAlignment="Top" Width="163" FontSize="16" FontFamily="Microsoft New Tai Lue"/>
+        <Button x:Name="registerstudent" Content="Register" FontSize="16" FontFamily="Microsoft New Tai Lue" HorizontalAlignment="Left" Margin="94,112,0,0" VerticalAlignment="Top" Width="75" Click="BtnRegister"/>
+        <Label Content="Name:" HorizontalAlignment="Left" Margin="10,230,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Microsoft New Tai Lue"/>
+        <TextBox x:Name="loginName" HorizontalAlignment="Left" Height="23" Margin="94,234,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="164" FontSize="16" FontFamily="Microsoft New Tai Lue"/>
+        <Label Content="Password:" HorizontalAlignment="Left" Margin="10,258,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Microsoft New Tai Lue"/>
+        <PasswordBox x:Name="loginPassword" HorizontalAlignment="Left" Height="23" Margin="94,262,0,0" VerticalAlignment="Top" Width="163" FontSize="16" FontFamily="Microsoft New Tai Lue"/>
+        <Button x:Name="loginstudent" Content="Login" FontSize="16" FontFamily="Microsoft New Tai Lue" HorizontalAlignment="Left" Margin="94,306,0,0" VerticalAlignment="Top" Width="75" Click="btnLoginAsStudent"/>
+        <Label Content="Name:" HorizontalAlignment="Left" Margin="429,43,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Microsoft New Tai Lue"/>
+        <TextBox x:Name="TeacherName" HorizontalAlignment="Left" Height="23" Margin="521,47,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="164" FontSize="16" FontFamily="Microsoft New Tai Lue"/>
+        <Label Content="Password:" HorizontalAlignment="Left" Margin="429,71,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Microsoft New Tai Lue"/>
+        <PasswordBox x:Name="TeacherPassword" HorizontalAlignment="Left" Height="23" Margin="522,75,0,0" VerticalAlignment="Top" Width="163" FontSize="16" FontFamily="Microsoft New Tai Lue"/>
+        <Button x:Name="loginteacher" Content="Login" FontSize="16" FontFamily="Microsoft New Tai Lue" HorizontalAlignment="Left" Margin="522,112,0,0" VerticalAlignment="Top" Width="75" Click="btnLoginAsTeacher"/>
+        <Label Content="Register Account" HorizontalAlignment="Left" Margin="50,10,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Microsoft New Tai Lue"/>
+        <Label Content="Login As Student&#xD;&#xA;" HorizontalAlignment="Left" Margin="50,194,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Microsoft New Tai Lue"/>
+        <Label Content="Login As Teacher&#xD;&#xA;" HorizontalAlignment="Left" Margin="495,11,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Microsoft New Tai Lue"/>
     </Grid>
 </Window>

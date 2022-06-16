@@ -12,16 +12,18 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace project
+namespace project.Lists
 {
-    /// <summary>
-    /// Interaction logic for UserLoggedIn.xaml
-    /// </summary>
-    public partial class UserLoggedIn : Window
+    public partial class StudentsList : Window
     {
-        public UserLoggedIn()
+        public StudentsList()
         {
             InitializeComponent();
+            Model db = new Model();
+            var query =
+                from stu in db.students
+                select new { stu.StudentId, stu.Username};
+            lista2.ItemsSource = query.ToList();
         }
     }
 }
